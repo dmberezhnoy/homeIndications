@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 
+import { bluePalette, getLightPalette } from "./palettes";
 import {
   getComponentsSettings,
   getTypographySettings,
@@ -11,8 +12,12 @@ const commonTheme = createTheme({
 
 export const getTheme = () => {
   // ---- LIGHT THEME ----
-  return createTheme(commonTheme, {
-    typography: getTypographySettings(),
+  const currentPalette = createTheme(commonTheme, {
+    palette: { settingsThemeColor: bluePalette },
+  });
+  return createTheme(currentPalette, {
+    typography: getTypographySettings(false),
     components: getComponentsSettings(),
+    palette: getLightPalette(currentPalette),
   });
 };

@@ -34,7 +34,7 @@ module.exports = {
           ["^react"],
           ["^@?\\w"],
           [
-            "^(api|components|consts|containers|hooks|icons|images|pages|types|utils|slices|ui-kit|hoc)(/.*|$)",
+            "^(api|components|consts|containers|layouts|hooks|icons|images|pages|types|utils|slices|ui-kit|hoc)(/.*|$)",
           ],
           ["^\\u0000"],
         ],

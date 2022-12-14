@@ -7,6 +7,14 @@
 }
 
 a {
+  background: transparent;
+  &:focus {
+    outline: thin dotted;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
   text-decoration: none;
-  outline: none;
+  color: inherit;
 }

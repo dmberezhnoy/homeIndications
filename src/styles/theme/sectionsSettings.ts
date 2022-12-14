@@ -1,7 +1,9 @@
 import { TypographyOptions } from "@mui/material/styles/createTypography";
 
+import { ColorKeys } from "../variables";
+
 // TYPOGRAPHY
-export const getTypographySettings = (): TypographyOptions => ({
+export const getTypographySettings = (isDark: boolean): TypographyOptions => ({
   fontFamily: "Inter",
   button: {
     textTransform: "none",
@@ -10,48 +12,40 @@ export const getTypographySettings = (): TypographyOptions => ({
     fontWeight: 500,
   },
   caption: {
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: "24px",
     fontWeight: 400,
-  },
-  h3: {
-    fontSize: 20,
-    fontWeight: 700,
   },
   h5: {
-    fontSize: 18,
+    fontSize: "18px",
     lineHeight: "28px",
     fontWeight: 600,
-    color: "black",
+    color: isDark ? ColorKeys.DARK_NEUTRALS_900 : ColorKeys.LIGHT_NEUTRALS_900,
+  },
+  h6: {
+    fontSize: "16px",
+    lineHeight: "26px",
+    fontWeight: 600,
+    color: isDark ? ColorKeys.DARK_NEUTRALS_900 : ColorKeys.LIGHT_NEUTRALS_900,
+  },
+  body1: {
+    fontSize: "14px",
+    fontWeight: 400,
+    lineHeight: "20px",
+    color: isDark ? ColorKeys.DARK_NEUTRALS_900 : ColorKeys.LIGHT_NEUTRALS_900,
   },
   body2: {
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: "24px",
     fontWeight: 700,
   },
-  h6: {
-    fontSize: 16,
-    fontWeight: 600,
-    color: "black",
-  },
-  body1: {
-    fontSize: 14,
-    fontWeight: 400,
-    lineHeight: "20px",
-    color: "black",
-  },
   subtitle2: {
-    fontSize: 14,
+    fontSize: "14px",
     lineHeight: "20px",
-    color: "grey",
     fontWeight: 400,
+    color: isDark ? ColorKeys.DARK_NEUTRALS_600 : ColorKeys.LIGHT_NEUTRALS_600,
   },
 });
-
-// SHAPE
-export const shapeSettings = {
-  borderRadius: 8,
-};
 
 // COMPONENTS SETTINGS
 export const getComponentsSettings = () => ({
@@ -76,12 +70,5 @@ export const getComponentsSettings = () => ({
   },
   MuiFormControl: {
     defaultProps: { fullWidth: true },
-  },
-  MuiPaper: {
-    styleOverrides: {
-      root: {
-        "& .MuiAutocomplete-listbox": { padding: "4px" },
-      },
-    },
   },
 });

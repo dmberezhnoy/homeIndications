@@ -1,8 +1,9 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 import { ThemeProvider } from "@mui/material";
-import { Stack, Typography } from "@mui/material";
 
+import AppRoutes from "./AppRoutes";
 import { getTheme } from "./styles/theme";
 
 function App() {
@@ -10,10 +11,9 @@ function App() {
 
   return (
     <ThemeProvider theme={appTheme}>
-      <Stack>
-        <Typography variant="h1">Hello</Typography>
-        <Typography variant="h2">Hello</Typography>
-      </Stack>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
